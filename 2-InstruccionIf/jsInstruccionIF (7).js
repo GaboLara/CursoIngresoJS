@@ -10,7 +10,4 @@ if (edad<18 && estado != "Soltero" ) {
     
 }
 
-	
-
-
 }//FIN DE LA FUNCIÓN
