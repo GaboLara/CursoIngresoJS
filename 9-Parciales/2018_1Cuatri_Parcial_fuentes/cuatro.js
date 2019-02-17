@@ -17,11 +17,9 @@ function mostrar()
             resultado = parseInt(numerouno) + parseInt(numerodos);
             if (resultado>10) {
                 alert("La suma es " + resultado + " y supero 10");
-            }     
-                     
-                        
-                    }
-                }
+       }       
+     }
+  }
 }
             
 

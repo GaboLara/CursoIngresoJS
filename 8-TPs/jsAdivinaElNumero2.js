@@ -14,15 +14,55 @@ var contadorIntentos;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-	
-
+	numeroSecreto = Math.floor(Math.random() * (100-1))+1;
+	contadorIntentos = 0;
 }
 
 function verificar()
 {
-	
-	
-
+	console.log(contadorIntentos++);
+	document.getElementById("intentos").value = parseInt(contadorIntentos);
+   if ((numeroSecreto == document.getElementById("numero").value) && (contadorIntentos == 1)) {
+	alert("Usted es un Psíquico.");
+   }
+   else {
+	   if (numeroSecreto == document.getElementById("numero").value && contadorIntentos == 2){
+		   alert("Excelente percepción.");
+	   }
+	   else {
+		   if (numeroSecreto == document.getElementById("numero").value && contadorIntentos == 3){
+			   alert("Esto es suerte.");
+		   }
+		   else {
+			   if (numeroSecreto == document.getElementById("numero").value && contadorIntentos == 4) {
+				   alert("Excelente técnica.");				   
+			   }
+			   else {
+				   if (numeroSecreto == document.getElementById("numero").value && contadorIntentos == 5) {
+					   alert("Usted está en la media.");
+				   }
+				   else {
+					   if ((numeroSecreto == document.getElementById("numero").value) && (contadorIntentos >= 6 && contadorIntentos <= 10)) {
+						   alert("Falta técnica.");
+					   }
+					   else {
+						   if (numeroSecreto == document.getElementById("numero").value && contadorIntentos > 10) {
+							alert("Afortunado en el amor!!");   
+						   }
+						   else {
+							if (document.getElementById("numero").value < numeroSecreto) {
+								alert("Falta para llegar al numero secreto");
+							  }
+							  else {
+								if (document.getElementById("numero").value > numeroSecreto) {
+									alert("Se pasó del numero secreto.");
+								  }
+							  }
+						   }
+					   }
+				   }
+			   }
+		   }
+	   }
+   }
 }
