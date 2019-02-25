@@ -6,6 +6,7 @@ function mostrar()
   var contadorneg=0;
   var contadorceros=0;
   var contadorpares=0;
+  var diferencia
 	//declarar contadores y variables
 
   var respuesta="si";
@@ -34,13 +35,14 @@ function mostrar()
     contador++;
     respuesta=prompt("Desea ingresar otro numero? si o no.");
     if (numero % 2 == 0) {
-      contadorpares++;      
+      contadorpares++;
     }
+    diferencia=parseInt(positivos) + parseInt(negativo);
   }
 alert("Suma de Negativos " + negativo + ", Cantidad de Negativos " + contadorneg);
 alert("Suma de Positivos " + positivos + ", Cantidad de Positivos " + contadorpost);
 alert("Cantidad de Ceros " + contadorceros + ", Cantidad de Pares " + contadorpares);
 alert("Promedio de Positivos " + positivos/contadorpost + ", Promedio de Negativos " + negativo/contadorneg);
-alert("Diferencia entres Positivos y Negativos " + positivos - negativo);
+alert("Diferencia entres Positivos y Negativos " + diferencia);
 }
 //FIN DE LA FUNCIÓN
