@@ -12,8 +12,7 @@ function mostrar()
   var numero;
   var negativo=0;
   var positivos=0;
-	while(respuesta!="no")
-	{
+	while(respuesta!="no") {
     //suma de los negativos
     numero=prompt("Ingrese un número");
     if (numero<0) {
@@ -21,12 +20,12 @@ function mostrar()
       contadorneg++;
     }
     //Suma de los positivos
-    else{
+    else {
       if (numero>0) {
         positivos=parseInt(positivos)+parseInt(numero);
         contadorpost++;
       }
-      else{
+      else {
         if (numero==0) {
           contadorceros++;
         }
@@ -34,11 +33,14 @@ function mostrar()
     }
     contador++;
     respuesta=prompt("Desea ingresar otro numero? si o no.");
+    if (numero % 2 == 0) {
+      contadorpares++;      
+    }
   }
-alert("Suma de Negativos " + negativo + " Cantidad de Negativos " + contadorneg);
-alert("Suma de Positivos " + positivos + " Cantidad de Positivos " + contadorpost);
-alert("Cantidad de Ceros " + contadorceros);
-
-
-
-}//FIN DE LA FUNCIÓN
+alert("Suma de Negativos " + negativo + ", Cantidad de Negativos " + contadorneg);
+alert("Suma de Positivos " + positivos + ", Cantidad de Positivos " + contadorpost);
+alert("Cantidad de Ceros " + contadorceros + ", Cantidad de Pares " + contadorpares);
+alert("Promedio de Positivos " + positivos/contadorpost + ", Promedio de Negativos " + negativo/contadorneg);
+alert("Diferencia entres Positivos y Negativos " + positivos - negativo);
+}
+//FIN DE LA FUNCIÓN
