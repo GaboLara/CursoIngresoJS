@@ -27,17 +27,20 @@ function mostrar()
                 cantidadceros++;
             }
             if (numero>=0 && numero<=100) {
-                promediopositivos=promediopositivos+parseInt(numero);
+                promediopositivos=parseInt(promediopositivos)+parseInt(numero);
                 contadorpositivo++;
             }
             if (numero>=-100 && numero<0) {
                 sumanegativos=sumanegativos+parseInt(numero);
             }
             if (nummax<numero) {
+                numero=parseInt(numero);
+                nummax=parseInt(nummax);
                 nummax=numero;
                 letramax=letra;
             }
             if (nummin>numero) {
+                nummin=parseInt(nummin);
                 nummin=numero;
                 letramin=letra;
             }
@@ -46,8 +49,12 @@ function mostrar()
             alert("El numero ingresado no es correcto");
         }
         respuesta = confirm("Desea ingresar mas datos?");
-    }
-    document.write("La cantidad de numero Pares son: " + cantidadpares + ", La cantidad de números impares son: " + cantidadimpares + ", La cantidad de ceros son: " + cantidadceros + 
-    ", El promedio de todos los números positivos ingresados son: " + promediopositivos / contadorpositivo + ", La suma de todos los números negativos son: " + sumanegativos + 
-    ", El número y la letra del máximo son: " + nummax + " y " + letramax + " y El número y la letra del mínimo son: " + nummin + " y " + letramin);
+}//Fin While
+    document.write("<br/>La cantidad de numero Pares son: "+cantidadpares);
+    document.write("<br/>La cantidad de números impares son: "+cantidadimpares);
+    document.write("<br/>La cantidad de ceros son: "+cantidadceros); 
+    document.write("<br/>El promedio de todos los números positivos ingresados son: "+promediopositivos/contadorpositivo);
+    document.write("<br/>La suma de todos los números negativos son: "+sumanegativos); 
+    document.write("<br/>El número y la letra del máximo son: "+nummax+" y "+letramax);
+    document.write("<br/>El número y la letra del mínimo son: "+nummin+" y "+letramin);
 }
