@@ -15,8 +15,7 @@ function mostrar()
             continue;
         }
         sexo = prompt("Favor de ingresar el Sexo del Alumno 'm' o 'f'.");
-        promedio=parseInt(promedio)+parseInt(nota);
-        alumnos++;
+        if (sexo=="m"||sexo=="f") {
             if (sexo == "m") {
                 contarvarones++;            
             }
@@ -27,6 +26,13 @@ function mostrar()
             if (nota>=6 && sexo=="m") {
                 cantvaronesmayor6++;
             }
+            promedio=parseInt(promedio)+parseInt(nota);
+            alumnos++;
+        }
+        else {
+        alert("La letra ingresada no es correcta.");
+        continue;
+        }
         }
         alert("El promedio de las notas totales son " + promedio / 5);
         alert("La nota más baja " + notamenor + " y el sexo de esa persona es: " + sexonotamenor);
