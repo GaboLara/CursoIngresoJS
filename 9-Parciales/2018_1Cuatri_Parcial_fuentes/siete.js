@@ -10,7 +10,7 @@ function mostrar()
     var cantvaronesmayor6=0;
         while (alumnos<=5){
         nota = prompt("Favor de ingresar la nota del Alumno.");
-        if (nota>10) {
+        if (nota>10||nota<0) {
             alert("La nota no es correcta");
             continue;
         }

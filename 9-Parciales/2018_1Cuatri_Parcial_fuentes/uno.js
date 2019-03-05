@@ -6,6 +6,6 @@ function mostrar()
     var perimetro;
     ancho = prompt("Ancho");
     largo = prompt("Largo");
-    perimetro = [parseInt(ancho) * 2] * [parseInt(largo) * 2];
+    perimetro = [[parseInt(ancho) + parseInt(largo)] * 2];
     alert("El perimetro es " + perimetro);
 }
