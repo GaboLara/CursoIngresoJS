@@ -1,52 +1,55 @@
 function mostrar()
 {
     var marca;
-    var peso=0;
+    var peso;
     var temperatura;
-    var respuesta=true;
-    var contadortemp=0;
-    var pesomaximo=0;
-    var marcamaspesado;
-    var cantidadproductoscero=0;
-    var promediopeso=0;
-    var contadorpeso=0;
-    var pesominimo=101;
-    while(respuesta!=false){
-        marca=prompt("Favor de ingresar la marca del producto.");
-        peso=prompt("Favor de ingresar el peso del producto.");
-        temperatura=prompt("Favor de ingresar la temperatura del producto.");
-        if (peso>=1 && peso<=100) {
-            if (temperatura>=-30&&temperatura<=30) {
+    var confirmar=true;
+    var contador=0;
+    var temperaturapar=0;
+    var pesomax=0;
+    var marcamax;
+    var menoscero=0;
+    var promedio=0;
+    var pesomin=100;
+        pesomax=parseInt(pesomax);
+        pesomin=parseInt(pesomin);
+        promedio=parseInt(promedio);
+        while(confirmar!=false){
+            marca=prompt("Favor de ingresar la marca del producto");
+            peso=prompt("Favor de ingresar el preso del producto");
+            peso=parseInt(peso);
+                while(peso<1||peso>100){
+                    alert("El peso ingresado no es correcto, vuelva a ingresar");
+                    peso=prompt("Favor de ingresar el preso del producto");
+                    peso=parseInt(peso);
+            }
+            promedio=promedio+peso;
+            temperatura=prompt("Favor de ingresar la temperatura de almacenamiento");
+            temperatura=parseInt(temperatura);
+                while(temperatura<-30||temperatura>30){
+                    alert("La temperatura ingresada no es correcta, vuelva a ingresar");
+                    temperatura=prompt("Favor de ingresar la temperatura de almacenamiento");
+                    temperatura=parseInt(temperatura);
+                }
                 if (temperatura%2==0) {
-                    contadortemp++;                
+                    temperaturapar++;
                 }
-                if (temperatura<=0) {
-                    cantidadproductoscero++;
+                if (peso>pesomax) {
+                    pesomax=peso;
+                    marcamax=marca;
                 }
-            }
-            else {
-                alert("La temperatura ingresada no es valida.");
-                continue;
-            }
-            promediopeso=parseInt(promediopeso)+parseInt(peso);
-            contadorpeso++;
-            if (peso>=pesomaximo) {
-                pesomaximo=parseInt(peso);
-                marcamaspesado=marca;
-            }
-            if (peso<=pesominimo) {
-                pesominimo=parseInt(peso);
-            }
+                if (peso<pesomin) {
+                    pesomin=peso;
+                }
+                if (temperatura<0) {
+                    menoscero++;
+                }
+                contador++;
+                confirmar=confirm("Desea ingresar un nuevo producto?");
         }
-        else {
-            alert("El peso ingresado no es valido.");
-        }
-        respuesta=confirm("Desea ingresar un nuevo producto?");
-    }
-    document.write("<br/>La cantidad de temperaturas pares son: " + contadortemp);
-    document.write("<br/>La marca del producto más pesado es: " + marcamaspesado);
-    document.write("<br/>La cantidad de productos que se conservan a menos de 0 grados son: " + cantidadproductoscero);
-    document.write("<br/>El promedio del peso de todos los productos son: " + promediopeso/contadorpeso);
-    document.write("<br/>El peso máximo es: " + pesomaximo);
-    document.write("<br/>El peso minimo es: " + pesominimo);
+                    document.write("<br/>La cantidad de temperaturas pares son: "+temperaturapar);
+                    document.write("<br/>La marca del producto más pesado es: "+marcamax);
+                    document.write("<br/>La cantidad de productos que se conservan a menos de 0 grados son: "+menoscero);
+                    document.write("<br/>El promedio del peso de todos los productos son: "+promedio/contador);
+                    document.write("<br/>El peso máximo es: "+pesomax+" y el mínimo es: "+pesomin);
 }
